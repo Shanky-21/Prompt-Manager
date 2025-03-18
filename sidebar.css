@@ -1,0 +1,118 @@
+body {
+    width: 350px;
+    font-family: Arial, sans-serif;
+    padding: 10px;
+    margin: 0;
+    background-color: #f4f4f4;
+  }
+  
+  .container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 15px;
+  }
+  
+  #new-prompt {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+    min-height: 80px;
+    max-height: 200px;
+  }
+  
+  #save-prompt {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #save-prompt:hover {
+    background-color: #45a049;
+  }
+  
+  #prompt-list {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-top: 10px;
+  }
+  
+  .prompt-item {
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  .prompt-text {
+    word-wrap: break-word;
+    max-height: 100px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    padding-right: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+  .prompt-actions {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  
+  .prompt-actions button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .copy-btn {
+    background-color: #2196F3;
+    color: white;
+  }
+  
+  .copy-btn:hover {
+    background-color: #1976D2;
+  }
+  
+  .edit-btn {
+    background-color: #FFC107;
+    color: white;
+  }
+  
+  .edit-btn:hover {
+    background-color: #FFA000;
+  }
+  
+  .delete-btn {
+    background-color: #F44336;
+    color: white;
+  }
+  
+  .delete-btn:hover {
+    background-color: #D32F2F;
+  }
+  
+  /* Additional styles for edit mode */
+  .prompt-edit-input {
+    width: 100%;
+    min-height: 80px;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+  }

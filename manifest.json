@@ -1,0 +1,17 @@
+{
+    "manifest_version": 3,
+    "name": "Prompter",
+    "version": "1.0",
+    "description": "Prompt management sidebar",
+    "permissions": [
+      "sidePanel",
+      "activeTab"
+    ],
+    "action": {},
+    "background": {
+      "service_worker": "background.js"
+    },
+    "side_panel": {
+      "default_path": "sidebar.html"
+    }
+  }
