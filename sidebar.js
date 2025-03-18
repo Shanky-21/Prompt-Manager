@@ -43,20 +43,54 @@ document.addEventListener('DOMContentLoaded', function() {
         const focusContent = document.createElement('div');
         focusContent.className = 'focus-content';
         
-        const focusText = document.createElement('pre');
-        focusText.textContent = prompt;
-        focusText.style.whiteSpace = 'pre-wrap';
-        focusText.style.fontFamily = 'inherit';
+        // Create close button container
+        const closeButtonContainer = document.createElement('div');
+        closeButtonContainer.style.position = 'absolute';
+        closeButtonContainer.style.top = '10px';
+        closeButtonContainer.style.right = '10px';
         
+        // Close Button with X icon
         const closeBtn = document.createElement('button');
-        closeBtn.textContent = 'Close';
-        closeBtn.className = 'delete-btn';
+        closeBtn.innerHTML = '&times;'; // HTML entity for X
+        closeBtn.className = 'close-btn';
+        closeBtn.style.cssText = `
+          background: none;
+          border: none;
+          color: #ff4136;
+          font-size: 30px;
+          cursor: pointer;
+          padding: 0;
+          line-height: 1;
+          font-weight: bold;
+          transition: color 0.3s ease;
+        `;
         closeBtn.onclick = () => {
           document.body.removeChild(focusOverlay);
         };
         
+        // Hover effect
+        closeBtn.addEventListener('mouseenter', () => {
+          closeBtn.style.color = '#ff6b6b';
+        });
+        closeBtn.addEventListener('mouseleave', () => {
+          closeBtn.style.color = '#ff4136';
+        });
+        
+        // Create text content
+        const focusText = document.createElement('pre');
+        focusText.textContent = prompt;
+        focusText.style.cssText = `
+          white-space: pre-wrap;
+          font-family: inherit;
+          margin-top: 40px; // Add space for close button
+          max-height: calc(100% - 60px);
+          overflow-y: auto;
+        `;
+        
+        // Assemble the overlay
+        closeButtonContainer.appendChild(closeBtn);
+        focusContent.appendChild(closeButtonContainer);
         focusContent.appendChild(focusText);
-        focusContent.appendChild(closeBtn);
         focusOverlay.appendChild(focusContent);
         
         document.body.appendChild(focusOverlay);
@@ -78,8 +112,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const editInput = document.createElement('textarea');
         editInput.value = prompt;
         editInput.className = 'prompt-edit-input';
-        editInput.style.width = '100%';
-        editInput.style.height = '400px';
+        editInput.style.width = '90%';
+        editInput.style.height = 'inherit';
         editInput.style.resize = 'vertical';
         
         // Create action buttons container
