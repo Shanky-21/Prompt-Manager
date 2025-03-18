@@ -172,3 +172,33 @@ body {
 .close-btn:hover {
   color: #ff6b6b;
 }
+
+.search-container {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+#search-input {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+#clear-search {
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  margin-left: -30px;
+  padding: 0 10px;
+}
+
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none !important;
+}

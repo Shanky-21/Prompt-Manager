@@ -1,12 +1,57 @@
+
+
 document.addEventListener('DOMContentLoaded', function() {
   const newPromptTextarea = document.getElementById('new-prompt');
   const savePromptBtn = document.getElementById('save-prompt');
+  const searchInput = document.getElementById('search-input');
   const promptList = document.getElementById('prompt-list');
+
+  // Search input event listener
+
+  // Clear search button
+  // clearSearchBtn.addEventListener('click', () => {
+  //     searchInput.value = '';
+  //     performSearch();
+  // });
+
+  function performSearch() {
+    console.log("debug doing search");
+    const searchTerm = searchInput.value.toLowerCase().trim();
+    const promptItems = document.querySelectorAll('.prompt-item');
+  
+    promptItems.forEach(item => {
+      const promptText = item.querySelector('.prompt-text');
+      const text = promptText.textContent.toLowerCase();
+      
+      if (searchTerm === '') {
+        // When search is empty, show all items and reset text
+        item.classList.remove('hidden');
+        promptText.innerHTML = promptText.textContent;
+      } else if (text.includes(searchTerm)) {
+        // If search term is found, show item and highlight
+        item.classList.remove('hidden');
+        
+        // Highlight matching text
+        const highlightedText = promptText.textContent.replace(
+          new RegExp(searchTerm, 'gi'), 
+          match => `<span class="highlight">${match}</span>`
+        );
+        promptText.innerHTML = highlightedText;
+      } else {
+        // Hide items that don't match
+        item.classList.add('hidden');
+      }
+    });
+  }
+
+  searchInput.addEventListener('input', performSearch);
 
   // Load and display prompts
   function loadPrompts() {
     promptList.innerHTML = ''; // Clear existing list
     const prompts = JSON.parse(localStorage.getItem('savedPrompts') || '[]');
+
+    console.log("debug prompts", prompts);
     
     prompts.forEach((prompt, index) => {
       const promptItem = document.createElement('div');
@@ -206,6 +251,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
+  if (searchInput.value.trim() !== '') {
+    performSearch();
+  }
+
+
+  // if (searchInput.value.trim() !== '') {
+  //   performSearch();
+  // }
   // Initial load of prompts
   loadPrompts();
+
+
+  // searchInput.addEventListener('input', performSearch);
+
 });
