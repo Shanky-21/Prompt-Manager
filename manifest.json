@@ -1,17 +1,26 @@
 {
-    "manifest_version": 3,
-    "name": "Prompter",
-    "version": "1.0",
-    "description": "Prompt management sidebar",
-    "permissions": [
-      "sidePanel",
-      "activeTab"
-    ],
-    "action": {},
-    "background": {
-      "service_worker": "background.js"
-    },
-    "side_panel": {
-      "default_path": "sidebar.html"
+  "manifest_version": 3,
+  "name": "Prompt Sidebar Extension",
+  "version": "1.0",
+  "description": "Prompt management sidebar",
+  "permissions": [
+    "sidePanel",
+    "activeTab"
+  ],
+  "commands": {
+    "open_sidebar": {
+      "suggested_key": {
+        "default": "Alt+P",
+        "mac": "Alt+P"
+      },
+      "description": "Open Prompt Sidebar"
     }
+  },
+  "action": {},
+  "background": {
+    "service_worker": "background.js"
+  },
+  "side_panel": {
+    "default_path": "sidebar.html"
   }
+}
