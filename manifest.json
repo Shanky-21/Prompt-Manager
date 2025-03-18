@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Prompt Sidebar Extension",
+  "name": "Prompt Manager",
   "version": "1.0",
-  "description": "Prompt management sidebar",
+  "description": "Prompt Storing Extension",
   "permissions": [
     "sidePanel",
     "activeTab"
