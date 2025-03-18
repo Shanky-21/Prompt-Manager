@@ -110,7 +110,7 @@ body {
   
   /* Additional styles for edit mode */
   .prompt-edit-input {
-    width: 95%;
+    width: 90%;
     min-height: 300px;
     padding: 15px;
     border: 1px solid #ddd;
@@ -135,6 +135,7 @@ body {
 }
 
 .focus-content {
+  position: relative; /* Needed for absolute positioning of close button */
   background-color: white;
   padding: 20px;
   border-radius: 10px;
@@ -153,4 +154,21 @@ body {
 
 .view-btn:hover {
   background-color: #2980b9;
+}
+
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #ff4136;
+  font-size: 30px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #ff6b6b;
 }
