@@ -15,7 +15,7 @@ Prompt Manager is a powerful Chrome extension designed to help you efficiently s
 ## Installation
 
 ### Chrome Web Store (Recommended)
-1. [Link to Chrome Web Store will be added once published]
+1. [https://chromewebstore.google.com/detail/prompts-manager/nkeejffdhjkfhbpjjkijcicmbfocomlm]
 
 ### Manual Installation
 1. Download the latest release
